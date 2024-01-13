@@ -1,0 +1,38 @@
+{
+  "employee": [
+    {
+      "firstName": "jikj",
+      "lastName": "jj",
+      "age": "9",
+      "experience": "1",
+      "address": [
+        {
+          "houseNo": "huhub",
+          "streetName": "jij",
+          "landmark": "jj",
+          "cityName": "jjjj",
+          "stateName": "oo",
+          "country": "n"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "firstName": "bb",
+      "lastName": "kn",
+      "age": "1",
+      "experience": "1",
+      "address": [
+        {
+          "houseNo": "b",
+          "streetName": "m",
+          "landmark": "n",
+          "cityName": "j",
+          "stateName": "n",
+          "country": "j"
+        }
+      ],
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<form action="" [formGroup]="empForm" (ngSubmit)="onSubmit()">
+<div class="example-container">
+    <div class="d-flex content-between">
+        <mat-form-field class="example-full-width col-6">
+            <mat-label>First name</mat-label>
+            <input matInput placeholder="abc" formControlName="firstName">
+          </mat-form-field>
+          <!-- <mat-error *ngIf="!empForm.valid && empForm.get('firstName')?.hasError('required')">Please fill First Name</mat-error> -->
+          <mat-form-field class="example-full-width col-6">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Abc" formControlName="lastName">
+            </mat-form-field>
+            <!-- <mat-error *ngIf="!empForm.valid && empForm.get('lastName')?.hasError('required')">Please fill First Name</mat-error> -->
+
+    </div>
+
+    <div class="d-flex content-between">
+        <mat-form-field class="example-full-width col-6">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="abc" formControlName="age">
+          </mat-form-field>
+          <mat-form-field class="example-full-width col-6">
+              <mat-label>Experience</mat-label>
+              <input matInput placeholder="Abc" formControlName="experience">
+            </mat-form-field>
+    </div>
+    <div formArrayName='address'>
+        <div>Address</div>
+        <button mat-raised-button (click)="addEmployeeAddress()" type="button">Add</button>
+        <div *ngFor="let address of employeeAddres.controls let i = index">
+            <div [formGroupName]="i" class="row">
+                <div class="d-flex">
+                <input type="text" class="offset-2 col-4 mb-2" formControlName="houseNo">
+                <input type="text" class="offset-1 col-4 mb-2" formControlName="streetName">
+            </div>
+            <div>
+                <input type="text" class="offset-2 col-4 mb-2" formControlName="landmark">
+                <input type="text" class="offset-1 col-4 mb-2" formControlName="cityName">
+            </div>
+            <div>
+                <input type="text" class="offset-2 col-4 mb-2" formControlName="stateName">
+                <input type="text" class="offset-1 col-4 mb-2" formControlName="country">
+            </div>
+                <mat-icon (click)="removeEmployeeAddress(i)" class="offset-6  mb-2" [ngStyle]="{'color':'red'}">delete</mat-icon>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="mt-3">
+        <button mat-raised-button class="col-6" color="accent" type="submit">ADD</button>
+        <button mat-raised-button class="col-6" type="button" (click)="cancel()">Cancel</button>
+    </div>
+</div>
+</form>
